@@ -1,4 +1,4 @@
-#Sat May 02 10:44:38 IST 2020
-base.0=/home/iamsubhaa/office/ttt/demo_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Mon May 04 12:43:27 IST 2020
+base.0=/home/iamsubhaa/office/ttt/Flutter-Case-Study-Multiple-Navigators-with-BottomNavigationBar/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

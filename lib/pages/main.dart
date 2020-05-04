@@ -1,6 +1,8 @@
 import 'package:demo_app/navigation/main.dart';
+import 'package:demo_app/provider/bottomNavProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_app/utills/data.dart';
+import 'package:provider/provider.dart';
 
 const List<Pages> pages = <Pages>[
   Pages('Home', Icons.home),
@@ -21,10 +23,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     print("_currentBottomIndex   ");
-    print(_currentBottomIndex);
-    print(Navigator.defaultRouteName);
-    return new Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
+    print(Provider.of<bottomNavProvider>(context).isHide);
+    // print(_currentBottomIndex);
+    // print(Navigator.defaultRouteName);
+    return Scaffold(
+      bottomNavigationBar: Provider.of<bottomNavProvider>(context).isHide ? null : BottomNavigationBar(
         currentIndex: _currentBottomIndex,
         onTap: (int index){
           setState(() {
@@ -35,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
           return BottomNavigationBarItem(icon: Icon(entry.icon),title: Text(entry.title));
         }).toList()
       ),
-      body: IndexedStack(
+      body: 
+      IndexedStack(
         index: _currentBottomIndex,
         children: navbarList
       )

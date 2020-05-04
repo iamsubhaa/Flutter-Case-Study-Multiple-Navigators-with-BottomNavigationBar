@@ -1,4 +1,6 @@
+import 'package:demo_app/provider/bottomNavProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class myListView extends StatelessWidget {
   myListView({Key key, this.title}) : super(key: key);
@@ -16,6 +18,13 @@ class myListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        leading: GestureDetector(
+          child: Icon(Icons.arrow_back),
+          onTap: (){
+            Provider.of<bottomNavProvider>(context,listen: false).visible();
+            Navigator.pop(context);
+          },
+        ),
       ),
       backgroundColor: Colors.green,
       body: SizedBox.expand(
